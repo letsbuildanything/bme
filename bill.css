@@ -1,0 +1,70 @@
+* {    
+    -webkit-print-color-adjust: exact !important; 
+    color-adjust: exact !important; 
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html, body{
+    height: 100%;
+    width: 100%;
+    
+}
+
+.hero{
+    background-color: #1d3c45;
+    Padding: 1rem 2rem;
+}
+
+
+.hero{
+    background-color: #1d3c45;
+    Padding: 1rem 2rem;
+}
+
+header{
+    width: 100%;    
+    padding: 1rem 0rem;    
+    
+}
+
+h1{
+    color: #d2601a;
+}
+
+.detail{
+    display: grid;
+    grid-template-columns: auto auto auto;
+    column-gap: 1rem;
+    align-items: center;
+    padding: 2rem 0rem;
+}
+
+.detail p{
+    color: white;
+    text-align: center;;
+}
+
+table{
+    width: 100%;
+    text-align: center;
+    margin: 1rem 0rem;
+}
+
+td, th{
+    padding: 0.5rem 1rem;
+}
+
+#bill-summary{
+    width: 50%;
+    border-collapse: collapse;
+
+}
+
+#bill-summary td{
+    border: 1px solid black;
+    font-weight: bold;
+    font-size: 1.5rem;
+}
+

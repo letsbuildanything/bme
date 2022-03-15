@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <!-- <link rel="icon" type="image/gif" href="singe-applause.gif"> -->
+    <title>BME</title>
+    <link rel="stylesheet" href="stylesheet.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Shizuru|Sofia">
+    <script src="https://kit.fontawesome.com/ebd26c7796.js" crossorigin="anonymous"></script>
+    
+
+</head>
+
+<body id = 'wholebody'>
+
+    <div class="hero">
+        <div class="head-container">
+            <header>
+                <h1>Billing Made Easy</h1>
+            </header>
+    
+            <div class="detail">
+                
+                <input type="text" id="customer-name" placeholder="customer name" pattern="[a-zA-Z'-'\s]*">
+                <input type="text" id="shop-name" placeholder="shop name">
+                <p><span id = "total-item">0</span> Items</p>
+                
+            </div>
+        </div>
+
+        
+    </div>
+    
+
+    
+<div class="container">
+    <div class="table-container">
+        <table id = "table1" >       
+    
+            <thead id = "t_head">
+                <tr>
+                    <th>Items</th>
+                    <th>Price</th>
+                    <th>Quantity</th>
+                    <th>Total Price</th>
+                </tr>
+            </thead>
+            <tbody>
+    
+            </tbody>
+            <tfoot>
+                <tr >
+                    <td colspan="3">TOTAL</td>
+                    <td style = "font-family: 'Noto Serif', serif;"></td>
+                </tr>
+            </tfoot>
+    
+            
+        </table>
+     </div>   
+      
+     
+    <div id="btn-container">
+        <button id = "add-item"><i class="fa-solid fa-plus"></i> Add Item</button>
+        <button id = "select-item"><i class="fa-solid fa-square-check"></i> Select</button>
+        <button id = "del-item"><i class="fa-solid fa-trash"></i> Delete</button>
+        <button id = "clr-btn"><i class="fa-solid fa-broom"></i> Clear</button>
+        <button id = "download"><i class="fa-solid fa-file-invoice"></i> Print Bill</button>
+    </div>
+</div>
+ 
+    <div id = "shortcut-note">press <span>/</span> to get keyboard shortcut</div>
+
+    <script src="practice.js"></script>
+</body>
+
+
+</html>
