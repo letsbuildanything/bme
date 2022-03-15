@@ -22,7 +22,7 @@
         margin-right: 12rem;
     }
        
-   }
+    }
 
    @media only screen and (min-width: 2500px){
 
@@ -228,3 +228,37 @@ input[type=checkbox]:checked:after {
 	color: green;
 }
 
+
+#smallscr{
+    display: none;    
+}
+
+@media only screen and (max-device-width: 650px){
+
+    #smallscr{
+        display: block;
+        width: 100%;
+        background-color: var(--secondary);
+        color: white;
+        position: absolute;
+        top: 0;
+        padding: 0.5rem;
+        text-align: center;
+        font-family: var(--primaryFont);
+    }
+    
+    #smallscr button{
+        border: none;
+        outline: none;
+        position: absolute;
+        /* z-index: 1; */
+        right: 0;
+        top: 0;
+        bottom: 0;
+        padding: 0 1rem;
+        text-align: center;
+        background-color: #d2601a;
+    }
+    
+       
+}

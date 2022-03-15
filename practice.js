@@ -709,4 +709,11 @@ function logKey(e){
 }
 
 
+// smaller screen warning..
+const smallScrInfo = document.getElementById('smallscr')
+
+const closeBtn = document.getElementById('close')
+closeBtn.addEventListener('click', function(){
+    smallScrInfo.style.display = 'none'
+})
 
