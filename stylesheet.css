@@ -259,6 +259,19 @@ input[type=checkbox]:checked:after {
         text-align: center;
         background-color: #d2601a;
     }
+
+    #shortcut-note{
+        display: none;
+    }
+    
+       
+}
+
+@media only screen and (max-device-width: 850px){
+
+    #shortcut-note{
+        display: none;
+    }
     
        
 }
