@@ -1,10 +1,4 @@
-// setting date
 
-const month = ['Jan', 'feb', 'March', 'April', 'May', 'June', 'July', 'Aug', 'Sept', 'Oct', 'Nov', 'Dec']
-const d = new Date();
-let time = d.getHours()+":"+d.getMinutes()
-let dateTime = d.getDate() +" "+ month[d.getMonth()]+" "+ d.getFullYear()+" "+time
-console.log(dateTime)
 // getting Element/tag from html
 const table11 = document.querySelector("#table1")
 const addBtn = document.querySelector("#add-item")
@@ -468,10 +462,16 @@ function clearItem(){
 /* ---------------------Printbill button----------------------------- */
 
 const download = document.getElementById('download')
-
+const month = ['Jan', 'feb', 'March', 'April', 'May', 'June', 'July', 'Aug', 'Sept', 'Oct', 'Nov', 'Dec']
 download.addEventListener('click', printBill)
 
 function printBill(){
+// setting date
+    const d = new Date();
+    let time = d.getHours()+":"+d.getMinutes()
+    let dateTime = d.getDate() +" "+ month[d.getMonth()]+" "+ d.getFullYear()+" "+time
+
+
     let table_inner_str = document.getElementById('t_head').innerHTML;
     
 // checking customer name
