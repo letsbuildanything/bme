@@ -61,7 +61,7 @@ if(localStorage.getItem('tablebody')){
         const p_node = tableNode.rows[i]
         for(let j=0; j<=table11.rows[0].cells.length; j++){
             if(j<3){
-                const input = p_node.cells[j].children[0]
+                let input = p_node.cells[j].children[0]
                 if(j==0){                    
                     input.value = rows_value[i][j] ? rows_value[i][j] : ""
 
@@ -69,7 +69,9 @@ if(localStorage.getItem('tablebody')){
 
                     function itemName(e){
                         patternCheck(e)
-                        rows_value[i][j] = input.value
+
+                        let ind1 = input.parentNode.parentNode.rowIndex-1;
+                        rows_value[ind1][j] = e.target.value
                         localStorage.setItem('rows_value',JSON.stringify(rows_value))
                     }
 
@@ -87,16 +89,16 @@ if(localStorage.getItem('tablebody')){
                         const price = p_node.cells[1].children[0]
                         const quantity = p_node.cells[2].children[0]
                         const update = p_node.cells[3]
-                        
+                        let ind1 = input.parentNode.parentNode.rowIndex-1;
 
-                        totalColArr[i] = price.value * quantity.value
+                        totalColArr[ind1] = price.value * quantity.value
                         
 
 
                         localStorage.setItem('totalColArr', JSON.stringify(totalColArr)) 
                     
                         // update.textContent = price.value * quantity.value
-                        update.textContent = totalColArr[i]
+                        update.textContent = totalColArr[ind1]
                         //updating total billing.. last row
                     
                         let totalSum = 0;
@@ -109,8 +111,8 @@ if(localStorage.getItem('tablebody')){
         
         
                         //storing value for local storage...               
-                        
-                        rows_value[i][j] = p_node.cells[j].children[0].value 
+                       
+                        rows_value[ind1][j] = p_node.cells[j].children[0].value 
                         localStorage.setItem('rows_value', JSON.stringify(rows_value));
                         localStorage.setItem('total_bill', JSON.stringify(totalSum))
                                    
@@ -210,7 +212,7 @@ function createCell(t_cell, i){
     if(i<3){
         const input = document.createElement('input')
         const p_node = t_cell.parentNode
-        const row_ind = p_node.rowIndex-1
+   
         //column items
         if(i==0){
             input.setAttribute('type', 'text')
@@ -220,7 +222,9 @@ function createCell(t_cell, i){
 
             function itemName(e){
                 patternCheck(e)
-                rows_value[row_ind][i] = p_node.cells[0].children[0].value
+
+                let ind1 = input.parentNode.parentNode.rowIndex-1;
+                rows_value[ind1][i] = p_node.cells[0].children[0].value
                 //local storage
                 localStorage.setItem('rows_value', JSON.stringify(rows_value));
                 localStorage.setItem('tablebody',JSON.stringify(tableNode.outerHTML)) 
@@ -238,9 +242,9 @@ function createCell(t_cell, i){
                 const price = p_node.cells[1].children[0]
                 const quantity = p_node.cells[2].children[0]
                 const update = p_node.cells[3]
-            
+                let ind1 = input.parentNode.parentNode.rowIndex-1;
                 
-                totalColArr[row_ind] = price.value * quantity.value
+                totalColArr[ind1] = price.value * quantity.value
                 localStorage.setItem('totalColArr', JSON.stringify(totalColArr)) 
             
                 update.textContent = price.value * quantity.value
@@ -263,7 +267,7 @@ function createCell(t_cell, i){
 
                 //storing value for local storage...               
                 
-                rows_value[row_ind][i] = p_node.cells[i].children[0].value 
+                rows_value[ind1][i] = p_node.cells[i].children[0].value 
                 localStorage.setItem('rows_value', JSON.stringify(rows_value)); 
                 localStorage.setItem('tablebody',JSON.stringify(tableNode.outerHTML)) 
                            
